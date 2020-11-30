@@ -234,6 +234,10 @@ img[alt="Auswärtiges Amt"] {
   height: calc(100px + 10vh);
 }
 
+img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
+  height: calc(100px + 10vh);
+}
+
 #partner > .row {
   align-items: center;
   justify-content: space-around;

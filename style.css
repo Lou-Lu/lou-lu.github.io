@@ -84,7 +84,7 @@ h2 {
 
 /* fixed logo ***********************************/
 
-aside {
+aside.sonart {
   position: fixed;
   width: 60px;
   bottom: 20px;

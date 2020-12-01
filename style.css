@@ -247,12 +247,6 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
 }
 
-@media (min-width: 750px) {
-  .gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 .gallery > li {
   display: flex;
   align-items: center;
@@ -267,23 +261,52 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
 }
 
 @media (min-width: 750px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .gallery > li > div {
     padding: 2em;
     box-sizing: border-box;
   }
 
-  .gallery > li > img:hover:not(:active) {
+  .gallery > li > img:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
 
-  .gallery > li > img:active {
-    object-fit: contain;
-    top: 3em; bottom: 3em; left: 3em; right: 3em;
+  .gallery:not([style]) > aside { display: none }
+  .gallery > aside > * {
     position: fixed;
-    width: calc(100vw - 6em);
-    height: calc(100vh - 6em);
-    transition: initial;
+    z-index: 50;
+    width: 40px;
+    height: 40px;
+    color: white;
+    --d: 3em;
+    transition: transform 0.1s ease;
+  }
+  .gallery > aside > .x { top: var(--d); right: var(--d) }
+  .gallery > aside > .arrow-l { top: 50%; left: var(--d) }
+  .gallery > aside > .arrow-r { top: 50%; right: var(--d) }
+  .gallery[data-index="0"]      > aside > .arrow-l,
+  .gallery[data-rev-index="-1"] > aside > .arrow-r { transform: scale(0) }
+  .gallery > aside > *:hover { transform: scale(1.3) }
+  .gallery > aside > *:active { transform: scale(0.9) }
+
+  .gallery[style]::before {
+    content: '';
+    position: fixed;
+    z-index: 40;
+    top: 3em; bottom: 3em; left: 5em; right: 5em;
+    background: var(--selected) center/contain no-repeat;
+  }
+
+  .gallery[style]::after {
+    content: '';
+    position: fixed;
+    z-index: 30;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: rgba(20,20,20,0.9);
   }
 }
 
@@ -293,21 +316,6 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
     box-sizing: border-box;
   }
 }
-
-/* 
-.gallery[style]::before {
-  content: '';
-  position: fixed;
-  top: 5em; bottom: 5em; left: 5em; right: 5em;
-  background: var(--selected) center/contain no-repeat;
-}
-
-.gallery[style]::after {
-  content: url(/img/icon/x.svg);
-  position: fixed;
-  top: 2em; right: 2em;
-}
-*/
 
 /* footer ***************************************/
 

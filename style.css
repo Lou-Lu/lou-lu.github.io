@@ -182,13 +182,8 @@ main > img {
 dt { margin-bottom: 4px }
 dd { margin-bottom: 18px }
 
-.subtitle {
-  font-size: .9rem;
-  margin-top: .6ex;
-}
-
+.dark { color: var(--text) }
 .abstract > :last-child {
-  color: var(--text);
   margin-top: 2em;
   margin-bottom: 0;
 }

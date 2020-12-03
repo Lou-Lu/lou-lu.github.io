@@ -73,6 +73,14 @@ h2 {
   margin-bottom: 1.5ex;
 }
 
+/* trick to adjust anchor positions */
+@media (min-width: 750px) {
+  h2 {
+    padding-top: 200px;
+    margin-top: -200px;
+  }
+}
+
 .theme h2 {
   border-bottom: 2px solid var(--text);
 }
@@ -201,7 +209,7 @@ dd { margin-bottom: 18px }
   margin: 20px;
 }
 
-.row img, #partner img {
+.row img, .partner img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
@@ -233,7 +241,7 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   height: calc(100px + 10vh);
 }
 
-#partner > .row {
+.partner > .row {
   align-items: center;
   justify-content: space-around;
 }

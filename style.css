@@ -37,7 +37,7 @@ nav.lang > :not(:first-child) {
   border-left: 1px solid var(--text);
 }
 
-@media (min-width: 750px) {
+@media not all and (max-width: 750px) {
   header.sticky { position: sticky; top: 0 }
   header.sticky > nav { position: sticky; top: 2.7em }
 }
@@ -74,7 +74,7 @@ h2 {
 }
 
 /* trick to adjust anchor positions */
-@media (min-width: 750px) {
+@media not all and (max-width: 750px) {
   h2 {
     padding-top: 200px;
     margin-top: -200px;
@@ -157,7 +157,7 @@ main > img {
   align-items: start;
 }
 
-@media (min-width: 750px) {
+@media not all and (max-width: 750px) {
   #overview {
     margin-top: -125px;
   }
@@ -204,7 +204,7 @@ main > section:not(#overview), footer {
   padding: 7ex 10%;
 }
 
-@media (min-width: 750px) {
+@media not all and (max-width: 750px) {
   .two-column {
     column-count: 2; /* farewell, nested divs! */
     column-gap: 5%;
@@ -250,7 +250,7 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   transition: transform .1s ease;
 }
 
-@media (min-width: 750px) {
+@media not all and (max-width: 750px) {
   .gallery {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -317,7 +317,7 @@ footer > div {
   box-sizing: border-box;
 }
 
-@media (min-width: 750px) {
+@media not all and (max-width: 750px) {
   footer > div:first-child {
     width: 66%;
     margin-right: 25%;

@@ -122,11 +122,13 @@ body > a > img {
   body > a > img:nth-of-type(n+3) { display: none }
 }
 
-body > a::before {
-  content: attr(hover-title);
+/* overlays *************************************/
+
+[overlay]::before {
+  content: attr(overlay);
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #fff;
   padding: 4.5ex 3em;
   font-style: italic;
@@ -136,32 +138,13 @@ body > a::before {
   background-color: rgba(0,0,0,.6);
 }
 
-body > a:hover::before /*, body > a:hover::after */ {
+[overlay]:hover::before {
   opacity: 1;
 }
 
-/* body > a:target {
-  border-left: 5px solid var(--theme);
-  background:
-    linear-gradient(to right, rgba(255,255,255,0), 5px, rgba(255,255,255,1)) no-repeat,
-    linear-gradient(to right, var(--theme), var(--theme)) no-repeat;
-  background-size: 60px;
-} */
-
-/* body > a::after {
-  content: url(/img/icon/arrow-right.svg);
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  bottom: 20px;
-  right: 35px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-} */ 
-
-/* body > a:hover > img {
-  filter: blur(10px);
-} */
+[overlay].overlay-title::before {
+  font-size: 1.8rem;
+}
 
 /* overview *************************************/
 
@@ -255,9 +238,8 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
 }
 
-.gallery > li {
-  display: flex;
-  align-items: center;
+.gallery:not(.lift) > li {
+  position: relative;
 }
 
 .gallery > li > img {
@@ -278,7 +260,7 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
     box-sizing: border-box;
   }
 
-  .gallery > li > img:hover {
+  .gallery.lift > li > img:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
@@ -319,9 +301,8 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
 }
 
 @media (max-width: 750px) {
-  .gallery > li > * {
-    padding: 1em 0;
-    box-sizing: border-box;
+  .gallery {
+    row-gap: 1em;
   }
 }
 

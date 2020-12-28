@@ -90,13 +90,34 @@ h2 {
   color: white;
 }
 
-/* fixed logo ***********************************/
+/* navigation ***********************************/
 
-aside.sonart {
+aside.fixed {
   position: fixed;
-  width: 60px;
-  bottom: 20px;
-  left: 30px;
+  width: 3.2rem;
+  left: 1.25rem;
+}
+
+aside.fixed img { width: 100%; }
+aside.menu { top: 1.25rem; }
+aside.sonart { bottom: 20px; }
+
+nav.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 25rem;
+  padding: 2em;
+  font-size: 0.7rem;
+  background-color: black;
+  transform: translateX(-105%);
+  transition: transform 0.4s ease;
+}
+
+nav.sidebar.open { transform: translateX(0) }
+nav.sidebar * { color: white }
+
+@media (max-width: 750px) {
+  aside { display: none; }
 }
 
 /* listing **************************************/
@@ -357,7 +378,5 @@ footer > div {
   #overview > div {
     padding: 10%;
   }
-
-  aside { display: none; }
 }
 

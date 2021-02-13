@@ -98,31 +98,43 @@ h2 {
   left: 1.25rem;
 }
 
-.sonart { bottom: 20px; }
-.sidebar > .button {
-  top: 1.25rem;
-  z-index: 100;
-}
+.menu { top: 1.25rem; z-index: 120; }
+.sonart { bottom: 20px; z-index: 120; }
+.sonart.active { filter: invert(1); }
 
-aside img, aside svg { width: 100%; }
+.fixed img, .fixed svg { width: 100%; }
 
-.sidebar > nav {
+.sidebar {
   position: fixed;
   left: 0; top: 0; bottom: 0;
-  width: 25rem;
+  width: 220px;
   padding: 2em;
-  font-size: 0.7rem;
   color: white;
   background-color: black;
-  font-size: 2em;
+  font-size: 1.4em;
   transform: translateX(-105%);
-  transition: transform 0.4s ease;
+  transition: transform 0.2s ease-out;
+  box-shadow: 10px 0 35px rgba(0,0,0,0.2);
+  z-index: 110;
 }
 
-.sidebar:focus-within > nav { transform: translateX(0) }
+.sidebar.active { transform: initial; }
 
-.sidebar:focus-within > nav,
-.sidebar:focus-within > .button { pointer-events: none }
+.sidebar-overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: #444444;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  transition-delay: 0;
+  pointer-events: none;
+}
+
+.sidebar.active + .sidebar-overlay {
+  opacity: 0.1;
+  pointer-events: initial;
+}
 
 /* nav.sidebar * { color: white } */
 
@@ -300,7 +312,7 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   .gallery:not([style]) > aside { display: none }
   .gallery > aside > * {
     position: fixed;
-    z-index: 50;
+    z-index: 220;
     width: 40px;
     height: 40px;
     color: white;
@@ -318,7 +330,7 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   .gallery[style]::before {
     content: '';
     position: fixed;
-    z-index: 40;
+    z-index: 210;
     top: 3em; bottom: 3em; left: 5em; right: 5em;
     background: var(--selected) center/contain no-repeat;
   }
@@ -326,7 +338,7 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   .gallery[style]::after {
     content: '';
     position: fixed;
-    z-index: 30;
+    z-index: 200;
     top: 0; bottom: 0; left: 0; right: 0;
     background-color: rgba(20,20,20,0.9);
   }

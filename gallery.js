@@ -1,3 +1,5 @@
+/* gallery *********************************************************/
+
 document.querySelectorAll('ul.gallery.show').forEach(gallery => {
 
   const images = gallery.querySelectorAll('li > img');
@@ -29,4 +31,18 @@ document.querySelectorAll('ul.gallery.show').forEach(gallery => {
     }
   })
 })
+
+/* sidebar *********************************************************/
+
+const respondents = [
+  document.querySelector('.sidebar'),
+  document.querySelector('.fixed.sonart'),
+];
+
+document.querySelector('.sidebar-overlay').onclick = () => {
+  respondents.map(r => r.classList.remove('active'));
+}
+document.querySelector('.fixed.menu').onclick = () => {
+  respondents.map(r => r.classList.add('active'));
+}
 

@@ -46,7 +46,7 @@ nav.lang > :not(:first-child) {
 
 a {
   text-decoration: none;
-  color: var(--text);
+  color: inherit;
 }
 
 a:hover {
@@ -92,29 +92,39 @@ h2 {
 
 /* navigation ***********************************/
 
-aside.fixed {
+.fixed {
   position: fixed;
   width: 3.2rem;
   left: 1.25rem;
 }
 
-aside.fixed img { width: 100%; }
-aside.menu { top: 1.25rem; }
-aside.sonart { bottom: 20px; }
+.sonart { bottom: 20px; }
+.sidebar > .button {
+  top: 1.25rem;
+  z-index: 100;
+}
 
-nav.sidebar {
+aside img, aside svg { width: 100%; }
+
+.sidebar > nav {
   position: fixed;
   left: 0; top: 0; bottom: 0;
   width: 25rem;
   padding: 2em;
   font-size: 0.7rem;
+  color: white;
   background-color: black;
+  font-size: 2em;
   transform: translateX(-105%);
   transition: transform 0.4s ease;
 }
 
-nav.sidebar.open { transform: translateX(0) }
-nav.sidebar * { color: white }
+.sidebar:focus-within > nav { transform: translateX(0) }
+
+.sidebar:focus-within > nav,
+.sidebar:focus-within > .button { pointer-events: none }
+
+/* nav.sidebar * { color: white } */
 
 @media (max-width: 750px) {
   aside { display: none; }

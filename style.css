@@ -76,8 +76,8 @@ h2 {
 /* trick to adjust anchor positions */
 @media not all and (max-width: 750px) {
   h2 {
-    padding-top: 200px;
-    margin-top: -200px;
+    padding-top: 6ex;
+    margin-top: -6ex;
   }
 }
 
@@ -107,7 +107,7 @@ h2 {
 .sidebar {
   position: fixed;
   left: 0; top: 0; bottom: 0;
-  width: 220px;
+  width: 12em;
   padding: 2em;
   color: white;
   background-color: black;
@@ -136,7 +136,21 @@ h2 {
   pointer-events: initial;
 }
 
-/* nav.sidebar * { color: white } */
+.sidebar > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar > ul > li {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.sidebar > ul ul {
+  list-style-type: "— ";
+  margin-top: 0.4ex;
+  font-weight: normal
+}
 
 @media (max-width: 750px) {
   aside { display: none; }

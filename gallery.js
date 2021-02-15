@@ -39,10 +39,10 @@ const respondents = [
   document.querySelector('.fixed.sonart'),
 ];
 
-document.querySelector('.sidebar-overlay').onclick = () => {
-  respondents.map(r => r.classList.remove('active'));
-}
-document.querySelector('.fixed.menu').onclick = () => {
-  respondents.map(r => r.classList.add('active'));
-}
+const open = () => respondents.map(r => r.classList.add('active'));
+const close = () => respondents.map(r => r.classList.remove('active'));
+
+document.querySelector('.fixed.menu').onclick = open;
+document.querySelector('.sidebar-overlay').onclick = close;
+window.onhashchange = close;
 

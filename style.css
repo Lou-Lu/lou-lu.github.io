@@ -113,7 +113,7 @@ h2 {
   background-color: black;
   font-size: 1.4em;
   transform: translateX(-105%);
-  transition: transform 0.2s ease-out;
+  transition: transform 0.15s ease-out;
   box-shadow: 10px 0 35px rgba(0,0,0,0.2);
   z-index: 110;
 }
@@ -126,8 +126,7 @@ h2 {
   top: 0; bottom: 0; left: 0; right: 0;
   background-color: #444444;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
-  transition-delay: 0;
+  transition: opacity 0.15s ease-out;
   pointer-events: none;
 }
 

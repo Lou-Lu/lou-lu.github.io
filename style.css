@@ -5,6 +5,7 @@
   line-height: 1.4;
   color: var(--text);
   font-size: calc(8px + .5vw);
+  scroll-behavior: smooth;
 }
 
 body { margin: 0; }

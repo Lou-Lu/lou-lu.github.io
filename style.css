@@ -301,6 +301,10 @@ img[alt="Deutsch-Tschechischer Zukunftsfonds"] {
   align-items: center;
   justify-content: space-around;
 }
+.partner > .rowLeft {
+  align-items: center;
+  justify-content: space-around;
+}
 
 /* gallery **************************************/
 
